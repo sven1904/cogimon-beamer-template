@@ -1,0 +1,54 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{cogimon}
+
+\title{Full 6-DOF Admittance Control for the Industrial Robot St\"aubli TX60}
+\date{\today}
+\author{Sven Tittel, Milad Malekzadeh, Jochen Steil}
+\institute{Institute of Robotics and Process Control, TU Braunschweig}
+
+\newcommand{\as}[1]{autostart&start=#1&}
+\newcommand{\ass}[2]{autostart&start=#1&stop=#2&}
+\newcommand{\la}{loop&autostart&}
+\newcommand{\las}[1]{loop&\as{#1}}
+\newcommand{\lass}[2]{loop&\ass{#1}{#2}}
+\newcommand<>{\video}[3][width=.7\paperwidth]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node#4 at (current page.center) {\href{run:#2}{\includegraphics[#1]{#3}}};
+  \end{tikzpicture}%
+}
+
+\begin{document}
+
+\begin{frame}[plain,fragile]
+	\titlepage
+\end{frame}
+
+% Section and subsection used for W.P. and T. because laziness
+%\section{17}
+%\subsection{2.3.5}
+
+\begin{frame}{Some long title to overlap the included image}
+	Here is some normal text
+	\begin{itemize}
+		\item A list 
+		\item Second item in the list
+		\begin{itemize}
+			\item A list within a list
+			\item YAI
+		\end{itemize}
+	\end{itemize}
+	\vfill
+	\begin{enumerate}
+		\item Enumeration\
+		\item Math: $2^n-1$
+	\end{enumerate}
+	\vfill
+	Writing \texttt{\textbackslash alert\{text\}} generates \alert{text}.
+
+\end{frame}
+
+\begin{frame}{Video check}
+  \video<+(1)>[width=\paperwidth]{figures/admittance.mp4?\lass{9}{42}}{figures/admittance}
+\end{frame}
+
+\end{document}
